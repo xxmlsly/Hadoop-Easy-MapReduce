@@ -115,7 +115,7 @@ public class query4{
         conf.setOutputFormat(TextOutputFormat.class);
         MultipleInputs.addInputPath(conf, new Path(args[0]), TextInputFormat.class, CustomerMap.class);
         MultipleInputs.addInputPath(conf, new Path(args[1]), TextInputFormat.class, TransactionMap.class);
-        FileOutputFormat.setOutputPath(conf, new Path("/liuya/output/output4"));
+        FileOutputFormat.setOutputPath(conf, new Path(args[2]));
 		JobClient.runJob(conf);	
 
 		//JOB2
@@ -129,8 +129,8 @@ public class query4{
         conf1.setInputFormat(TextInputFormat.class);
         conf1.setOutputFormat(TextOutputFormat.class);
 
-		FileInputFormat.setInputPaths(conf1, new Path("/liuya/output/output4"));
-	    FileOutputFormat.setOutputPath(conf1, new Path(args[2]));
+		FileInputFormat.setInputPaths(conf1, new Path(args[2]));
+	    FileOutputFormat.setOutputPath(conf1, new Path(args[3]));
 		JobClient.runJob(conf1);
 
     }
