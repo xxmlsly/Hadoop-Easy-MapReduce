@@ -1,5 +1,3 @@
-package createTransactions;
-
 import java.io.FileWriter;
 import java.util.Random;
 
